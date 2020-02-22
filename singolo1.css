@@ -1,7 +1,7 @@
 @font-face {
     font-family: Lato; 
     src: url(assets/fonts/Lato/Lato-Regular.ttf), 
-	   url(assets/fonts/Lato/Lato-Bold.ttf),
+	  url(assets/fonts/Lato/Lato-Bold.ttf),
 	  url(assets/fonts/Lato/Lato-Black.ttf),
 	  url(assets/fonts/Lato/Lato-Light.ttf),
 	  url(assets/fonts/Lato/Lato-Thin.ttf);
@@ -15,9 +15,11 @@ html, body {
 	margin: 0;
 	padding: 0;
 	height: 100%;
+	font-size: 10px;
 }
 body{
 	font-family: 'Lato', sans-serif;
+	font-size: 10px;
 }
 .content{
 	width: 100%;
@@ -25,12 +27,17 @@ body{
 	margin: 0 auto;
 }
 .wrapper{
-  
+  padding: 0 40px;
 }
 .wrapper-header{
 	background: #2d303a;
+	display: flex;
+	justify-content: space-between;
+    align-items: center;
+	padding-top: 25px;
+	padding-bottom: 25px;
 }
-.wrapper-header:after{
+.header:after{
 	content: '';
 	width: 100%;
 	max-width: 1020px;
@@ -39,17 +46,13 @@ body{
 	background: #323746;
 }
 .header{
-	display: flex;
-	justify-content: space-between;
-	height: 90px;
-    align-items: center;
-	padding: 0 40px;
+	background: #2d303a;
 }
 .logo{
 	
 }
 .logo__text{
-	font-size: 25px;
+	font-size: 2.5rem;
 	color: #ffffff;
 	font-family: "Lato";
 	font-weight: 700;
@@ -67,7 +70,7 @@ body{
 	line-height: 30px
 }
 .navigation-header__item {
-	font-size: 12px;
+	font-size: 1.2em;
 	color: #ffffff;
 	font-family: "Lato";
 	font-weight: 400;
@@ -100,11 +103,11 @@ body{
 }
 
 /*slider*/
-.wrapper-slider{
+.slider{
 	background: #f06c64;
-	position:relative;
+	position: relative;
 }
-.wrapper-slider:after{
+.slider:after{
 	content: '';
 	display: block;
 	width:100%;
@@ -112,10 +115,11 @@ body{
 	height: 15px;
 	background-color: #ea676b;
 }
-.slider{
+.wrapper-slider{
 	display:flex;
 	justify-content:space-between;
 	padding-bottom: 70px;
+	position:relative;
 }
 .slider__phone-vertical-wrap{
 	
@@ -123,7 +127,7 @@ body{
 .slider__phone-vertical{
 	position: relative;
     margin-top: 55px;
-    margin-left: 110px;
+    margin-left: 70px;
 }
 .slider__phone-vertical-base{
 	width: 218px;
@@ -142,7 +146,7 @@ body{
 .slider__phone-horizontal{
 	position: relative;
     margin-top: 53px;
-    margin-right: 258px;
+    margin-right: 218px;
 }
 .slider__phone-horizontal-base{
 	width: 218px;
@@ -185,16 +189,28 @@ body{
 	background: url(assets/img/arrow-right.png);
 	cursor: pointer;
 }
-/*servisec*/
-.wrapper-services{
-	padding: 60px 40px 60px 40px;
+
+/*services*/
+.services{
 	background: #f2f2f2;
+}
+.wrapper-services{
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+.services:after{
+	content: '';
+	display: block;
+	width: 100%;
+	max-width: 1020px;
+	height: 6px;
+	background-color: #ffffff;
 }
 .wrapper-text-services{
 	margin-bottom: 30px;
 }
 h2{
-	font-size: 30px;
+	font-size: 3em;
 	color: #666d89;
 	font-family: "Lato";
 	font-weight: 900;
@@ -202,14 +218,14 @@ h2{
 	margin-bottom: 20px;
 }
 .text-services{
-	font-size: 18px;
+	font-size: 1.8em;
 	color: #767e9e;
 	font-family: "Lato";
 	font-weight: 300;
 	text-align: left;
 	line-height: 26px;
 }
-.wrapper-list{
+.layout-3-column{
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
@@ -223,7 +239,7 @@ h2{
 	margin-bottom: 10px;
 }
 h3{
-	font-size: 18px;
+	font-size: 1.6em;
 	color: #666d89;
 	font-family: "Lato";
 	font-weight: 900;
@@ -231,22 +247,47 @@ h3{
 	margin-bottom: 10px;
 }
 .services-item__text{
-	font-size: 12px;
+	font-size: 1.2em;
 	color: #767e9e;
 	font-family: "Lato";
 	font-weight: 400;
 	text-align: left;
-	margin: 20px 0 0 20px;
+	padding: 20px 0 0 20px;
 	line-height: 20px;
+	text-align: justify;
 }
 .icon{
 	border: 2px solid #666d89;
     border-radius: 50%;
-    padding: 0 10px;
+    padding: 27px 27px;
     height: 60px;
     width: 60px;
 	margin-top: 20px;
 } 
 svg{
 	margin-top: 10px;
+}
+.icon-services-pen{
+	background: url(assets/img/pen.svg)no-repeat;
+	background-position: 50%;
+}
+.icon-services-bulb{
+	background: url(assets/img/bulb.svg)no-repeat;
+	background-position: 50%;
+}
+.icon-services-heart{
+	background: url(assets/img/heart.svg)no-repeat;
+	background-position: 50%;
+}
+.icon-services-phone{
+	background: url(assets/img/phone.svg)no-repeat;
+	background-position: 50%;
+}
+.icon-services-bubble{
+	background: url(assets/img/bubble.svg)no-repeat;
+	background-position: 50%;
+}
+.icon-services-star{
+	background: url(assets/img/star.svg)no-repeat;
+	background-position: 50%;
 }
