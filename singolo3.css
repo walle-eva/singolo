@@ -1,0 +1,67 @@
+@font-face {
+    font-family: Lato; 
+    src: url(assets/fonts/Lato/Lato-Regular.ttf), 
+	  url(assets/fonts/Lato/Lato-Bold.ttf),
+	  url(assets/fonts/Lato/Lato-Black.ttf),
+	  url(assets/fonts/Lato/Lato-Light.ttf),
+	  url(assets/fonts/Lato/Lato-Thin.ttf);
+   }
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+ul{
+	list-style-type: none;
+}
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-size: 10px;
+}
+body{
+	font-family: 'Lato', sans-serif;
+	font-size: 10px;
+}
+.content{
+	width: 100%;
+	max-width: 1020px;
+	margin: 0 auto;
+}
+.wrapper{
+  padding: 0 40px;
+}
+
+h2{
+	font-size: 3em;
+	color: #666d89;
+	font-family: "Lato";
+	font-weight: 900;
+	text-align: left;
+	margin-bottom: 20px;
+}
+
+h3{
+	font-size: 1.6em;
+	color: #666d89;
+	font-family: "Lato";
+	font-weight: 900;
+	text-align: left;
+	margin-bottom: 10px;
+}
+.contact{
+	background: #f06c64;
+}
+.wrapper-contact{
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+.text-contact{
+	font-size: 1.8rem;
+    color: #f0d8d9;
+    font-family: "Lato";
+    font-weight: 300;
+	line-height: 30px;
+}
+}

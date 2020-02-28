@@ -11,6 +11,9 @@
 	margin: 0;
 	box-sizing: border-box;
 }
+ul{
+	list-style-type: none;
+}
 html, body {
 	margin: 0;
 	padding: 0;
@@ -98,6 +101,12 @@ h3{
 .teg__active a{
 	color: #dedede;
 }
+.tegs a:hover{
+	color: #dedede;
+}
+.tegs:hover{
+	border-color: #c5c5c5;
+}
 .layout-4-column{
 	display: flex;
 	justify-content: space-between;
@@ -128,7 +137,73 @@ h3{
 .about-us{
 	background-color: #f2f2f2;
 }
+.about-us:after{
+	content: '';
+	display: block;
+	width: 100%;
+	max-width: 1020px;
+	height: 6px;
+	background-color: #ffffff;
+}
 .wrapper-about-us{
 	padding-top: 60px;
     padding-bottom: 60px;
+}
+.employee{
+	width: calc(33% - 10px);
+}
+.text-about{
+	font-size: 1.8em;
+	color: #767e9e;
+	font-family: "Lato";
+	font-weight: 300;
+	text-align: left;
+	line-height: 26px;
+	margin-bottom: 13px;
+}
+.employee__img{
+	padding: 40px 0 10px;
+}	
+.employee__text{
+	font-size: 1.2em;
+    color: #767e9e;
+    font-family: "Lato";
+    font-weight: 400;
+    text-align: left;
+    line-height: 20px;
+    text-align: justify;
+	margin-bottom: 22px;
+}
+.social-icons{
+	display: flex;
+	justify-content: start;
+}
+.icons {
+	width: 31px;
+    height: 31px;
+    border: 1px solid #666d89;
+    border-radius: 50%;
+	margin-right: 10px;
+}
+.icons:last-child{
+	margin-right: 0;
+}	
+.icons:hover{
+	cursor: pointer;
+}
+.icons__fb{
+	background: url(assets/img/svg/facebook2.svg)no-repeat;
+	background-position: 50%;
+}
+.icons__google{
+	background: url(assets/img/svg/google1+.svg)no-repeat;
+	background-position: 50%;
+}
+.icons__twitter{
+	background: url(assets/img/svg/twitter1.svg)no-repeat;
+	background-position: 50%;
+}
+.icons__linkedin{
+	background: url(assets/img/svg/linkedin1.svg)no-repeat;
+	background-position: 50%;
 }
