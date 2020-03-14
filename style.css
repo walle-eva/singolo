@@ -45,6 +45,10 @@
 }
  .header{
      background: #2d303a;
+	 position:fixed;
+	 z-index: 10;
+	 width: 100%;
+	 max-width: 1020px;
 }
  .logo__text{
      font-size: 2.5rem;
@@ -100,6 +104,7 @@
  .slider{
      background: #f06c64;
      position: relative;
+	 padding-top: 95px;
 }
  .slider:after{
      content: '';
@@ -377,6 +382,9 @@
  .layout-4-column >:nth-child(13){
      display: none;
 }
+.img_active{
+	border: 5px solid #F06C64;
+}
  #Project1{
      object-position: -8px -11px;
 }
@@ -626,4 +634,51 @@
      color: #626984;
      font-size: 1.2rem;
      padding-top: 7px;
+}
+.modal{
+	height: 50%;
+    box-shadow: 0px 0px 15px 4px #2d303a;
+    width: 50%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    background: #fff;
+    z-index: 20;
+	padding: 20px;
+}
+.modal > p{
+	color: #767e9e;
+    margin-bottom: 13px;
+    font-size: 1.8rem;
+    font-family: "Lato";
+    font-weight: 300;
+    line-height: 30px;
+    text-align: center;
+}
+.modal > button{
+	color: #767e9e;
+    margin-bottom: 13px;
+    font-size: 1.8rem;
+    font-family: "Lato";
+    font-weight: 300;
+    line-height: 30px;
+    text-align: center;
+    margin: auto;
+    padding: 0px 50px;
+	text-align:center;
+}
+.hint-name, .hint-email{
+	display: none;
+}
+.hint_active{
+	display: inline-block;
+	font-size: 1.2rem;
+    font-family: "Lato";
+    font-weight: 400;
+    line-height: 22px;
+    text-align: justify;
+	color: #f0d8d9;
 }

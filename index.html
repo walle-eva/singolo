@@ -10,7 +10,7 @@
     <title>Singolo</title>
   </head>
   <body>
-    <div class="content">
+    <div class="content" id="home">
       <header class="header">
         <div class="wrapper header__wrapper">
           <div class="logo">
@@ -21,11 +21,11 @@
           <div class="header-menu">
             <nav class="navigation">
               <ul class="navigation__items">
-                <li class="navigation__item navigation__item_active"><a>Home</a></li>
-                <li class="navigation__item"><a href="#">Services</a></li>
-                <li class="navigation__item"><a href="#">Portfolio</a></li>
-                <li class="navigation__item"><a href="#">About</a></li>
-                <li class="navigation__item"><a href="#">Contact</a></li>
+                <li class="navigation__item navigation__item_active"><a href="#home">Home</a></li>
+                <li class="navigation__item"><a href="#services">Services</a></li>
+                <li class="navigation__item"><a href="#portfolio">Portfolio</a></li>
+                <li class="navigation__item"><a href="#about">About</a></li>
+                <li class="navigation__item"><a href="#contact">Contact</a></li>
               </ul>
             </nav>
           </div>
@@ -59,7 +59,7 @@
       <!--основной контент-->
       <main>
         <!--Our Services-->
-        <section class="services">
+        <section class="services"  id="services">
           <div class="wrapper services__wrapper">
             <div class="wrapper-text-services">
               <h2>Our Services</h2>
@@ -152,7 +152,7 @@
           </div>
         </section>
         <!--Portfolio-->
-        <section class="portfolio">
+        <section class="portfolio" id="portfolio">
           <div class="wrapper portfolio__wrapper">
             <div class="wrapper-text-portfolio">
               <h2>Portfolio</h2>
@@ -205,7 +205,7 @@
           </div>
         </section>
         <!--About Us-->
-        <section class="about-us">
+        <section class="about-us" id="about">
           <div class="wrapper about-us__wrapper">
             <div class="wrapper-text-about">
               <h2>About Us</h2>
@@ -267,7 +267,7 @@
           </div>
         </section>
         <!--Get a Quote-->
-        <section class="contact">
+        <section class="contact" id="contact">
           <div class="wrapper contact__wrapper">
             <div class="wrapper-text-contact">
               <h2>Get a Quote</h2>
@@ -276,8 +276,10 @@
             <div class="layout-2-column">
               <div class="contact__form">
                 <figure>
-                  <form action="#test" method="POST">
+                  <form name="contact" action="#test" method="POST">
+				    <span class="hint-name">*Заполните это поле</span>
                     <input name="name" type="text" placeholder="Name(Required)" required>
+					<span class="hint-email">*Заполните это поле</span>
                     <input name="email" type="email" placeholder="Email(Required)" required>
                     <input name="subject" type="text" placeholder="Subject">
                     <textarea name="message" rows="12" cols="30" 
@@ -319,4 +321,5 @@
       </footer>
     </div>
   </body>
+  <script src="script.js"></script>
 </html>
