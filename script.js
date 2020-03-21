@@ -15,6 +15,25 @@ document.querySelector('.navigation__items').addEventListener('click', (event) =
 	behavior: 'smooth'})
 });
 
+document.addEventListener('scroll', (event) => {
+	  let currentPos = window.scrollY;
+	  let sections= document.querySelectorAll('section');
+	  let links = document.querySelectorAll('.navigation__item a');
+
+	  sections.forEach((item)=> {
+	    item.getAttribute('id');
+		  if(item.offsetTop <= currentPos && (item.offsetTop + item.offsetHeight) > currentPos){
+		    links.forEach((a) => {
+		    a.parentElement.classList.remove('navigation__item_active');
+			  if(item.getAttribute('id') === a.getAttribute('href').slice(1)){
+			    a.parentElement.classList.add('navigation__item_active')
+			  }
+		    })
+		  }
+	  })	
+	})
+
+
 //slider
 let items = document.querySelectorAll('.item-slider');
 let currentItem = 0;
