@@ -88,7 +88,12 @@ window.onload = function() {
 	addSliderClickHandler()
 	
 	//Portfolio
+	
+	//Tags
 	renderImgsToDom();
+	
+	//BorderImg
+	addBorderImg()
 	
 	//Contacts
 	addSendClickHandler();
@@ -261,6 +266,15 @@ const randomInteger = (min, max, num) => {
 	    for (i = min; i <= max; i++ ) arr.push(i);
 	    for (i = 0; i < num; i++) res.push(arr.splice(Math.floor(Math.random() * (arr.length)), 1)[0])
 	    return res;
+}
+
+const addBorderImg = () => {
+	document.querySelector('.layout-4-column').addEventListener('click', () => {
+	document.querySelectorAll('.portfolio__img').forEach((item) => {
+		item.classList.remove('img_active');
+	});
+	event.target.closest('.portfolio__img').classList.add('img_active');
+})
 }
 
 
