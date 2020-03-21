@@ -45,6 +45,10 @@
 }
  .header{
      background: #2d303a;
+	 position:fixed;
+	 z-index: 10;
+	 width: 100%;
+	 max-width: 1020px;
 }
  .logo__text{
      font-size: 2.5rem;
@@ -100,6 +104,7 @@
  .slider{
      background: #f06c64;
      position: relative;
+	 padding-top: 95px;
 }
  .slider:after{
      content: '';
@@ -109,12 +114,70 @@
      height: 15px;
      background-color: #ea676b;
 }
- .slider__wrapper{
+ .item-slider.active{
      display:flex;
      justify-content:space-between;
      padding-bottom: 70px;
      position:relative;
 }
+.item-slider img{
+	max-width: 100%;
+}
+ .item-slider{
+  display: none;
+  position: relative;
+  animation: 0.5s ease-in-out;
+  margin: 0 auto;
+}
+
+.next {
+  display: flex;
+}
+
+.next {
+  position: absolute;
+  top: 155px;
+  width: 100%;
+}
+.to-left {
+  animation-name: left;
+}
+
+.from-right {
+  animation-name: right;
+}
+
+.to-right {
+  animation-name: right;
+  animation-direction: reverse;
+}
+
+.from-left {
+  animation-name: left;
+  animation-direction: reverse;
+}
+
+@keyframes left {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100%;
+  }
+}
+
+@keyframes right {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0;
+  }
+}
+
+
+
+
  .slider__phone-vertical-wrap{
 }
  .slider__phone-vertical{
@@ -182,6 +245,14 @@
      background: url(assets/img/slider/arrow-right.png);
      cursor: pointer;
 }
+
+.screen_off{
+	background: #000;
+}
+
+
+
+
 /*Services*/
  .services{
      background: #f2f2f2;
@@ -376,6 +447,9 @@
 }
  .layout-4-column >:nth-child(13){
      display: none;
+}
+.img_active{
+	border: 5px solid #F06C64;
 }
  #Project1{
      object-position: -8px -11px;
@@ -626,4 +700,51 @@
      color: #626984;
      font-size: 1.2rem;
      padding-top: 7px;
+}
+.modal{
+	height: 50%;
+    box-shadow: 0px 0px 15px 4px #2d303a;
+    width: 50%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    background: #fff;
+    z-index: 20;
+	padding: 20px;
+}
+.modal > p{
+	color: #767e9e;
+    margin-bottom: 13px;
+    font-size: 1.8rem;
+    font-family: "Lato";
+    font-weight: 300;
+    line-height: 30px;
+    text-align: center;
+}
+.modal > button{
+	color: #767e9e;
+    margin-bottom: 13px;
+    font-size: 1.8rem;
+    font-family: "Lato";
+    font-weight: 300;
+    line-height: 30px;
+    text-align: center;
+    margin: auto;
+    padding: 0px 50px;
+	text-align:center;
+}
+.hint-name, .hint-email{
+	display: none;
+}
+.hint_active{
+	display: inline-block;
+	font-size: 1.2rem;
+    font-family: "Lato";
+    font-weight: 400;
+    line-height: 22px;
+    text-align: justify;
+	color: #f0d8d9;
 }
