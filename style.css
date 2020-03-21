@@ -24,6 +24,7 @@
      width: 100%;
      max-width: 1020px;
      margin: 0 auto;
+	 overflow: hidden;
 }
  .wrapper{
      padding: 60px 40px;
@@ -389,20 +390,20 @@
      color: #767e9e;
      margin-bottom: 8px;
 }
- .portfolio__teg{
+ .portfolio__tag{
      list-style-type: none;
      display: flex;
      justify-content: flex-start;
 }
- .portfolio__teg li{
+ .portfolio__tag li{
      border-radius: 5px;
      border: 1px solid #666d89;
      margin-right: 10px;
 }
- .portfolio__teg li:last-child{
+ .portfolio__tag li:last-child{
      margin-right: 0;
 }
- .portfolio__teg a{
+ .portfolio__tag a{
      font-size: 1.2rem;
      color: #767e9e;
      font-family: "Lato";
@@ -412,17 +413,17 @@
      text-decoration: none;
      padding: 6px;
 }
- .portfolio__teg .teg__active{
+ .portfolio__tag .tag__active{
      border: 1px solid #c5c5c5;
      border-radius: 5px;
 }
- .teg__active a{
+ .tag__active a{
      color: #dedede;
 }
- .tegs a:hover{
+ .tags a:hover{
      color: #dedede;
 }
- .tegs:hover{
+ .tags:hover{
      border-color: #c5c5c5;
 }
  .layout-4-column{
@@ -702,6 +703,7 @@
      padding-top: 7px;
 }
 .modal{
+	background: #f2f2f2;
 	height: 50%;
     box-shadow: 0px 0px 15px 4px #2d303a;
     width: 50%;
@@ -711,9 +713,10 @@
     margin: auto;
     top: 0;
     bottom: 0;
-    background: #fff;
     z-index: 20;
 	padding: 20px;
+	text-align: center;
+	border-radius: 5px;
 }
 .modal > p{
 	color: #767e9e;
@@ -734,7 +737,10 @@
     text-align: center;
     margin: auto;
     padding: 0px 50px;
-	text-align:center;
+	border-radius: 5px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 2px 2px #ccc;
+    border: none;
 }
 .hint-name, .hint-email{
 	display: none;
