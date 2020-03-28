@@ -3,73 +3,73 @@ let data = [
         id: 1,
 		idToImg: 'Project1',
         title: 'Project1',
-        urlToImage: 'assets/img/portfolio/Project.png',
+        urlToImage: 'assets/img/portfolio/Project01.png',
     },
     {
        id: 2,
 		idToImg: 'Project2',
         title: 'Project2',
-        urlToImage: 'assets/img/portfolio/Project2.png',
+        urlToImage: 'assets/img/portfolio/Project02.png',
     },
     {
        id: 3,
 		idToImg: 'Project3',
         title: 'Project3',
-        urlToImage: 'assets/img/portfolio/Project3.png',
+        urlToImage: 'assets/img/portfolio/Project03.png',
     },
 	{
        id: 4,
 		idToImg: 'Project4',
         title: 'Project4',
-        urlToImage: 'assets/img/portfolio/Project4.png',
+        urlToImage: 'assets/img/portfolio/Project04.png',
     },
 	{
        id: 5,
 		idToImg: 'Project5',
         title: 'Project5',
-        urlToImage: 'assets/img/portfolio/Project5.png',
+        urlToImage: 'assets/img/portfolio/Project05.png',
     },
 	{
        id: 6,
 		idToImg: 'Project6',
         title: 'Project6',
-        urlToImage: 'assets/img/portfolio/Project6.png',
+        urlToImage: 'assets/img/portfolio/Project06.png',
     },
 	{
        id: 7,
 		idToImg: 'Project7',
         title: 'Project7',
-        urlToImage: 'assets/img/portfolio/Project7.png',
+        urlToImage: 'assets/img/portfolio/Project07.png',
     },
 	{
        id: 8,
 		idToImg: 'Project8',
         title: 'Project8',
-        urlToImage: 'assets/img/portfolio/Project8.png',
+        urlToImage: 'assets/img/portfolio/Project08.png',
     },
 	{
        id: 9,
 		idToImg: 'Project9',
         title: 'Project9',
-        urlToImage: 'assets/img/portfolio/Project9.png',
+        urlToImage: 'assets/img/portfolio/Project09.png',
     },
 	{
        id: 10,
 		idToImg: 'Project10',
         title: 'Project10',
-        urlToImage: 'assets/img/portfolio/Project10.png',
+        urlToImage: 'assets/img/portfolio/Project010.png',
     },
 	{
        id: 11,
 		idToImg: 'Project11',
         title: 'Project11',
-        urlToImage: 'assets/img/portfolio/Project11.png',
+        urlToImage: 'assets/img/portfolio/Project011.png',
     },
 	{
        id: 12,
 		idToImg: 'Project12',
         title: 'Project12',
-        urlToImage: 'assets/img/portfolio/Project12.png',
+        urlToImage: 'assets/img/portfolio/Project012.png',
     }
 ];
 
@@ -85,7 +85,7 @@ window.onload = function() {
     addMenuScrollHandler();
 	
 	//slider
-	addSliderClickHandler()
+	addSliderClickHandler();
 	
 	//Portfolio
 	
@@ -97,8 +97,13 @@ window.onload = function() {
 	
 	//Contacts
 	addSendClickHandler();
+	
+	//menuMobile
+	addMenuMobileClickHandler();
+	linkCloseMenuMobile();
 }
 
+//Menu
 const addMenuClickHandler = () => {
 	let navigationItems = document.querySelector('.navigation__items');
 	
@@ -194,22 +199,27 @@ document.querySelector('.arrow-right').addEventListener('click', function() {
 });
 
 
-document.querySelector('.slider__phone-vertical-base').addEventListener('click', onScreen);
-function onScreen(event){
-	if(event.target.classList.contains('slider__phone-vertical-base')){
-	document.querySelector('.slider__phone-vertical-screen').classList.toggle('screen_off');
-	}
-}
-
-document.querySelector('.slider__phone-horizontal-base').addEventListener('click', onScreen1);
-function onScreen1(event){
-	if(event.target.classList.contains('slider__phone-horizontal-base')){
-	document.querySelector('.slider__phone-horizontal-screen').classList.toggle('screen_off');
-	}
-}
+phoneVerticalOff();
+phoneHorizontalOff();
 
 }
 
+const phoneVerticalOff = () => {
+	document.querySelector('.slider__phone-vertical-wrap').addEventListener('click', () =>{
+	document.querySelectorAll('.phone-vertical').forEach((img) => {
+	  img.classList.toggle('phone-vertical-on')
+	});
+  })
+}
+const phoneHorizontalOff = () => {
+document.querySelector('.slider__phone-horizontal-wrap').addEventListener('click', () => {
+	document.querySelectorAll('.phone-horizontal').forEach((img) => {
+	  img.classList.toggle('phone-horizontal-on')
+	});
+  })
+}
+
+//Portfolio
 const generateImgs = (data) => {
     let imgs = [];
     data.forEach((itemImg) => {
@@ -277,7 +287,7 @@ const addBorderImg = () => {
 })
 }
 
-
+//Contacts
 const addSendClickHandler = () => {
 	document.querySelector('button').addEventListener('click', () => {
 	event.preventDefault();
@@ -361,11 +371,76 @@ const validateModalWindow = () => {
 
 }
 
+//Mobile menu
+const addMenuMobileClickHandler = (event) => {
+document.querySelector('.hamburger').addEventListener('click', openMenu)}
 
+const openMenu = (event) => {
+		let hamburgerMenu = document.querySelector('.mobile .header-menu');
+		
+		hamburgerMenu.classList.add('menu-active');
+		document.querySelector('.mobile .navigation__items').classList.add('menu-enable');
+		document.querySelector('.mobile span.logo').classList.add('menu-enable');
+		
+		let hamburgerIcon = document.querySelector('.hamburger');
+		hamburgerIcon.classList.add('hamburger-active');
+		
+		let logo = document.querySelector('.mobile  .logo__text');
+	
+		logo.style.transform = 'translateX(' + (-parseInt(logo.getBoundingClientRect().left - hamburgerIcon.getBoundingClientRect().right - 30)) + 'px)';
+		
+		darkenMenuMobile();
+		
+		document.querySelector('.hamburger').removeEventListener('click', openMenu);
+		document.querySelector('.hamburger').addEventListener('click', closeMenu);
+		//document.querySelector('.darken').addEventListener('click', closeMenu); 
+		document.querySelector('.mobile .header-menu').addEventListener('blur', closeMenu) 
+		 
+	} 
 
+const closeMenu = ( ) => {
+	 
+	  let hamburgerMenu = document.querySelector('.mobile .header-menu');
+		
+		hamburgerMenu.classList.remove('menu-active');
+		document.querySelector('.mobile .navigation__items').classList.remove('menu-enable');
+		document.querySelector('.mobile span.logo').classList.remove('menu-enable');
+		
+		let hamburgerIcon = document.querySelector('.hamburger');
+		hamburgerIcon.classList.toggle('hamburger-active');
+		
+		let logo = document.querySelector('.mobile  .logo__text');
+		logo.style.transform = 'translateX(' + (parseInt(logo.getBoundingClientRect().width/2 - hamburgerIcon.getBoundingClientRect().right)) + 'px)';
+		
+		
+		
+		hidedarkenMenuMobile();
+		document.querySelector('.hamburger').removeEventListener('click', closeMenu);
+		document.querySelector('.hamburger').addEventListener('click', openMenu);
+		
+		document.querySelector('.darken').addEventListener('click', closeMenu);
 
+	
+}
 
+const linkCloseMenuMobile = () => {
+	let linkMenuMobile = document.querySelectorAll('.navigation__item');
+	linkMenuMobile.forEach(link => {
+		link.addEventListener('click', closeMenu);
+	})
+}
 
+const darkenMenuMobile = () => {
+	let darken = document.querySelector('.darken');
+	darken.classList.add('darken-active');
+	darken.addEventListener('click', closeMenu);
+}
+
+const hidedarkenMenuMobile = () => {
+	let darken = document.querySelector('.darken');
+	darken.classList.remove('darken-active');
+	 
+}
 
 
 
