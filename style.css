@@ -155,12 +155,10 @@
   animation-name: right;
   animation-direction: reverse;
 }
-
 .from-left {
   animation-name: left;
   animation-direction: reverse;
 }
-
 @keyframes left {
   from {
     left: 0;
