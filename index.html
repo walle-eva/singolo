@@ -12,7 +12,7 @@
   <body>
     <div class="content" id="home">
       <header class="header">
-        <div class="wrapper header__wrapper">
+        <div class="wrapper header__wrapper large">
           <div class="logo">
             <h1 class="logo__text">Singolo
               <span class="logo__text logo__text_color">*</span>
@@ -30,26 +30,44 @@
             </nav>
           </div>
         </div>
+		<div class="wrapper header__wrapper mobile">
+          <div class="logo">
+            <h1 class="logo__text">Singolo
+              <span class="logo__text logo__text_color">*</span>
+            </h1>
+          </div>
+          <div class="header-menu">
+            <nav class="header-menu__navigation navigation">
+			  <span class="hamburger">
+			    <span class="hamburger__line"></span>
+			  </span>
+			  <span class="logo menu-disable">
+			  <span class="logo__text">Singolo
+                <span class="logo__text logo__text_color">*</span>
+              </span>
+			  </span>
+              <ul class="navigation__items menu-disable">
+                <li class="navigation__item navigation__item_active"><a href="#home">Home</a></li>
+                <li class="navigation__item"><a href="#services">Services</a></li>
+                <li class="navigation__item"><a href="#portfolio">Portfolio</a></li>
+                <li class="navigation__item"><a href="#about">About</a></li>
+                <li class="navigation__item"><a href="#contact">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
       </header>
       <!--Slider-->
       <div class="slider">
         <div class="wrapper slider__wrapper">
 		<div class="item-slider active">
           <div class="slider__phone-vertical-wrap"> 
-            <div class="slider__phone-vertical">
-              <div class="slider__phone-vertical-base">
-                <div class="slider__phone-vertical-screen slider-screen">
-                </div>
-              </div>
-            </div>
+			<img class="phone-vertical phone-vertical-on" src="assets/img/slider/phone-vertical.png">
+			<img class="phone-vertical" src="assets/img/slider/phone-vertical-off.png">
           </div>
           <div class="slider__phone-horizontal-wrap">
-            <div class="slider__phone-horizontal">
-              <div class="slider__phone-horizontal-base">
-                <div class="slider__phone-horizontal-screen slider-screen">
-                </div>
-              </div>
-            </div>
+			 <img class="phone-horizontal phone-horizontal-on" src="assets/img/slider/phone-horizontal.png">
+			 <img class="phone-horizontal" class="slider__phone-horizontal-wrap-off" src="assets/img/slider/phone-horizontal-off.png">
           </div>
 		  </div>
 		  <div class="item-slider">
@@ -172,40 +190,40 @@
             </div>
             <div class="layout-4-column">
               <div class="portfolio__img">
-                <img id="Project1" src="assets/img/portfolio/Project.png" alt="Project1">
+                <img id="Project1" src="assets/img/portfolio/Project01.png" alt="Project1">
               </div>
               <div class="portfolio__img">
-                <img id="Project2" src="assets/img/portfolio/Project2.png" alt="Project2">
+                <img id="Project2" src="assets/img/portfolio/Project02.png" alt="Project2">
               </div>
               <div class="portfolio__img">
-                <img id="Project3" src="assets/img/portfolio/Project3.png" alt="Project3">
+                <img id="Project3" src="assets/img/portfolio/Project03.png" alt="Project3">
               </div>
               <div class="portfolio__img">
-                <img id="Project4" src="assets/img/portfolio/Project4.png" alt="Project4">
+                <img id="Project4" src="assets/img/portfolio/Project04.png" alt="Project4">
               </div>
               <div class="portfolio__img">
-                <img id="Project5" src="assets/img/portfolio/Project5.png" alt="Project5">
+                <img id="Project5" src="assets/img/portfolio/Project05.png" alt="Project5">
               </div>
               <div class="portfolio__img">
-                <img id="Project6" src="assets/img/portfolio/Project6.png" alt="Project6">
+                <img id="Project6" src="assets/img/portfolio/Project06.png" alt="Project6">
               </div>
               <div class="portfolio__img">
-                <img id="Project7" src="assets/img/portfolio/Project7.png" alt="Project7">
+                <img id="Project7" src="assets/img/portfolio/Project07.png" alt="Project7">
               </div>
               <div class="portfolio__img">
-                <img id="Project8" src="assets/img/portfolio/Project8.png" alt="Project8">
+                <img id="Project8" src="assets/img/portfolio/Project08.png" alt="Project8">
               </div>
               <div class="portfolio__img">
-                <img id="Project9" src="assets/img/portfolio/Project9.png" alt="Project9">
+                <img id="Project9" src="assets/img/portfolio/Project09.png" alt="Project9">
               </div>
               <div class="portfolio__img">
-                <img id="Project10" src="assets/img/portfolio/Project10.png" alt="Project10">
+                <img id="Project10" src="assets/img/portfolio/Project010.png" alt="Project10">
               </div>
               <div class="portfolio__img">
-                <img id="Project11" src="assets/img/portfolio/Project11.png" alt="Project11">
+                <img id="Project11" src="assets/img/portfolio/Project011.png" alt="Project11">
               </div>
               <div class="portfolio__img">
-                <img id="Project12" src="assets/img/portfolio/Project12.png" alt="Project12">
+                <img id="Project12" src="assets/img/portfolio/Project012.png" alt="Project12">
               </div>
             </div>
           </div>
@@ -326,6 +344,7 @@
         </div>
       </footer>
     </div>
+	<div tabindex="0" class="darken"></div>
   </body>
   <script src="script.js"></script>
 </html>
