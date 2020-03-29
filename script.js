@@ -166,6 +166,10 @@ function hideItem(direction) {
 }
 
 function showItem(direction) {
+	document.querySelector('.slider').classList.toggle('slider-blue');
+	document.querySelector('.arrow-left').classList.toggle('arrow-left-blue');
+	document.querySelector('.arrow-right').classList.toggle('arrow-right-blue');
+	
 	items[currentItem].classList.add('next', direction);
 	items[currentItem].addEventListener('animationend', function() {
 		this.classList.remove('next', direction);
@@ -371,54 +375,56 @@ const validateModalWindow = () => {
 
 }
 
-//Mobile menu
-const addMenuMobileClickHandler = (event) => {
-document.querySelector('.hamburger').addEventListener('click', openMenu)}
 
-const openMenu = (event) => {
+//Mobile menu
+const addMenuMobileClickHandler = () => {
+  document.querySelector('.hamburger').addEventListener('click', openMenu)
+}
+
+const openMenu = () => {
 		let hamburgerMenu = document.querySelector('.mobile .header-menu');
+		let hamburgerMenuItems = document.querySelector('.mobile .navigation__items');
+		let hamburgerMenuLogo = document.querySelector('.mobile span.logo');
+		let hamburgerIcon = document.querySelector('.hamburger');
+		let logo = document.querySelector('.mobile  .logo__text');
 		
 		hamburgerMenu.classList.add('menu-active');
-		document.querySelector('.mobile .navigation__items').classList.add('menu-enable');
-		document.querySelector('.mobile span.logo').classList.add('menu-enable');
-		
-		let hamburgerIcon = document.querySelector('.hamburger');
+		hamburgerMenuItems.classList.add('menu-enable');
+		hamburgerMenuLogo.classList.add('menu-enable');
 		hamburgerIcon.classList.add('hamburger-active');
-		
-		let logo = document.querySelector('.mobile  .logo__text');
 	
 		logo.style.transform = 'translateX(' + (-parseInt(logo.getBoundingClientRect().left - hamburgerIcon.getBoundingClientRect().right - 30)) + 'px)';
 		
 		darkenMenuMobile();
 		
-		document.querySelector('.hamburger').removeEventListener('click', openMenu);
-		document.querySelector('.hamburger').addEventListener('click', closeMenu);
-		//document.querySelector('.darken').addEventListener('click', closeMenu); 
-		document.querySelector('.mobile .header-menu').addEventListener('blur', closeMenu) 
+		hamburgerIcon.removeEventListener('click', openMenu);
+		hamburgerIcon.addEventListener('click', closeMenu); 
+		hamburgerMenu.addEventListener('blur', closeMenu) 
 		 
 	} 
 
 const closeMenu = ( ) => {
 	 
 	  let hamburgerMenu = document.querySelector('.mobile .header-menu');
+	  let hamburgerMenuItems = document.querySelector('.mobile .navigation__items');
+		let hamburgerMenuLogo = document.querySelector('.mobile span.logo');
+		let hamburgerIcon = document.querySelector('.hamburger');
+		let logo = document.querySelector('.mobile  .logo__text');
 		
 		hamburgerMenu.classList.remove('menu-active');
-		document.querySelector('.mobile .navigation__items').classList.remove('menu-enable');
-		document.querySelector('.mobile span.logo').classList.remove('menu-enable');
-		
-		let hamburgerIcon = document.querySelector('.hamburger');
-		hamburgerIcon.classList.toggle('hamburger-active');
-		
-		let logo = document.querySelector('.mobile  .logo__text');
+		hamburgerMenuItems.classList.remove('menu-enable');
+		hamburgerMenuLogo.classList.remove('menu-enable');
+		hamburgerIcon.classList.remove('hamburger-active');
+
 		logo.style.transform = 'translateX(' + (parseInt(logo.getBoundingClientRect().width/2 - hamburgerIcon.getBoundingClientRect().right)) + 'px)';
 		
 		
 		
 		hidedarkenMenuMobile();
-		document.querySelector('.hamburger').removeEventListener('click', closeMenu);
-		document.querySelector('.hamburger').addEventListener('click', openMenu);
 		
-		document.querySelector('.darken').addEventListener('click', closeMenu);
+		hamburgerIcon.removeEventListener('click', closeMenu);
+		hamburgerIcon.addEventListener('click', openMenu);
+		hamburgerMenu.addEventListener('blur', closeMenu)
 
 	
 }
@@ -433,13 +439,11 @@ const linkCloseMenuMobile = () => {
 const darkenMenuMobile = () => {
 	let darken = document.querySelector('.darken');
 	darken.classList.add('darken-active');
-	darken.addEventListener('click', closeMenu);
 }
 
 const hidedarkenMenuMobile = () => {
 	let darken = document.querySelector('.darken');
-	darken.classList.remove('darken-active');
-	 
+	darken.classList.remove('darken-active'); 
 }
 
 
