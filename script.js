@@ -99,14 +99,16 @@ window.onload = function() {
 	addSendClickHandler();
 	
 	//menuMobile
+	addMenuMobileHandler();
 	addMenuMobileClickHandler();
 	linkCloseMenuMobile();
+	addMenuMobileScrollHandler();
 }
 
 //Menu
 const addMenuClickHandler = () => {
 	let navigationItems = document.querySelector('.navigation__items');
-	
+	 
 	navigationItems.addEventListener('click', (event) => {
 	event.preventDefault();
 	
@@ -378,7 +380,7 @@ const validateModalWindow = () => {
 
 //Mobile menu
 const addMenuMobileClickHandler = () => {
-  document.querySelector('.hamburger').addEventListener('click', openMenu)
+  document.querySelector('.hamburger').addEventListener('click', openMenu);
 }
 
 const openMenu = () => {
@@ -399,7 +401,7 @@ const openMenu = () => {
 		
 		hamburgerIcon.removeEventListener('click', openMenu);
 		hamburgerIcon.addEventListener('click', closeMenu); 
-		hamburgerMenu.addEventListener('blur', closeMenu) 
+		document.querySelector('.darken').addEventListener('focus', closeMenu) 
 		 
 	} 
 
@@ -424,13 +426,11 @@ const closeMenu = ( ) => {
 		
 		hamburgerIcon.removeEventListener('click', closeMenu);
 		hamburgerIcon.addEventListener('click', openMenu);
-		hamburgerMenu.addEventListener('blur', closeMenu)
-
 	
 }
 
 const linkCloseMenuMobile = () => {
-	let linkMenuMobile = document.querySelectorAll('.navigation__item');
+	let linkMenuMobile = document.querySelectorAll('.mobile .navigation__item');
 	linkMenuMobile.forEach(link => {
 		link.addEventListener('click', closeMenu);
 	})
@@ -447,6 +447,47 @@ const hidedarkenMenuMobile = () => {
 }
 
 
+const addMenuMobileHandler = () => {
+	let navigationItems = document.querySelector('.mobile .navigation__items');
+	navigationItems.addEventListener('click', (event) => {
+	event.preventDefault();
+	
+	document.querySelectorAll('.mobile .navigation__item').forEach((item) => {
+      item.classList.remove('navigation__item_active');
+    });
+	event.target.closest('li').classList.add('navigation__item_active');
+  
+	let marginMenu = getComputedStyle(navigationItems);	
+	let blockID = event.target.closest('a').getAttribute('href').substr(1);
+  console.log(document.getElementById(blockID).getBoundingClientRect().top + pageYOffset - parseInt(marginMenu.height))
+	window.scrollTo({
+	  top: document.getElementById(blockID).getBoundingClientRect().top + pageYOffset,
+	  left: 0,
+	  behavior: 'smooth'})
+	});
+	
+	//linkCloseMenuMobile();
+}
+
+const addMenuMobileScrollHandler = () => {
+	document.addEventListener('scroll', (event) => {
+	  let currentPos = window.scrollY;
+	  let sections= document.querySelectorAll('section');
+	  let links = document.querySelectorAll('.mobile .navigation__item a');
+
+	  sections.forEach((item)=> {
+	    item.getAttribute('id');
+		  if(item.offsetTop <= currentPos && (item.offsetTop + item.offsetHeight) > currentPos){
+		    links.forEach((a) => {
+		    a.parentElement.classList.remove('navigation__item_active');
+			  if(item.getAttribute('id') === a.getAttribute('href').slice(1)){
+			    a.parentElement.classList.add('navigation__item_active')
+			  }
+		    })
+		  }
+	  })	
+	})
+}
 
 
 
